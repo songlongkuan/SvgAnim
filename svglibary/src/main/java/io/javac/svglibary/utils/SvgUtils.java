@@ -19,7 +19,6 @@ import io.javac.svglibary.svgEnum.SvgConfig;
 /**
  * Created by Pencilso on 2017/11/10.
  */
-
 public class SvgUtils {
     public static SvgEntity config(String path, SvgConfig svgConfig) throws FileNotFoundException {
         return config(new FileInputStream(path), svgConfig);
@@ -98,21 +97,34 @@ public class SvgUtils {
 
 
     public static void sort(String[] glyphs, int[] colors, SvgConfig svgConfig) {
-        if (svgConfig.equals(SvgConfig.GLYPHS_DEFAULT)) return;
-        int size = colors.length;
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size - 1 - i; j++) {
-                if (
-                        (svgConfig.equals(SvgConfig.GLYPHS_SHORT_TO_GROW) && glyphs[j].length() > glyphs[j + 1].length()) ||
-                                (svgConfig.equals(SvgConfig.GLYPHS_GROW_TO_SHORT) && glyphs[j].length() < glyphs[j + 1].length())
-                        ) {
-                    String temp = glyphs[j];
-                    glyphs[j] = glyphs[j + 1];
-                    glyphs[j + 1] = temp;
-
-                    int iTemp = colors[j];
-                    colors[j] = colors[j + 1];
-                    colors[j + 1] = iTemp;
+        if (svgConfig.equals(SvgConfig.GLYPHS_DEFAULT)) return;//默认模式的话 就不管它了
+        else if (svgConfig.equals(SvgConfig.GLYPHS_RANDOM)) {//随机
+            //创建随机数组集合
+            int[] randomArray = NumUtils.createRandomArray(glyphs.length);
+            for (int i = 0; i < randomArray.length; i++) {
+                String glyph = glyphs[i];
+                int color = colors[i];
+                int randomI = randomArray[i];//随机的角标
+                glyphs[i] = glyphs[randomI];
+                colors[i] = colors[randomI];
+                glyphs[randomI] = glyph;
+                colors[randomI] = color;
+            }
+        } else {//长到短或者短到长
+            int size = colors.length;
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < size - 1 - i; j++) {
+                    if (
+                            (svgConfig.equals(SvgConfig.GLYPHS_SHORT_TO_GROW) && glyphs[j].length() > glyphs[j + 1].length()) ||
+                                    (svgConfig.equals(SvgConfig.GLYPHS_GROW_TO_SHORT) && glyphs[j].length() < glyphs[j + 1].length())
+                            ) {
+                        String temp = glyphs[j];
+                        glyphs[j] = glyphs[j + 1];
+                        glyphs[j + 1] = temp;
+                        int iTemp = colors[j];
+                        colors[j] = colors[j + 1];
+                        colors[j + 1] = iTemp;
+                    }
                 }
             }
         }

@@ -16,5 +16,9 @@ public enum SvgConfig {
     /**
      * path 从短到长 先后绘制
      */
-    GLYPHS_SHORT_TO_GROW();
+    GLYPHS_SHORT_TO_GROW(),
+    /**
+     * path 随机绘制
+     */
+    GLYPHS_RANDOM;
 }

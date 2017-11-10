@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         animatedSvgView = findViewById(R.id.animated_svg_view);
         try {
-            config = SvgUtils.config(getAssets().open("20171110143319.svg"), SvgConfig.GLYPHS_GROW_TO_SHORT);
+            config = SvgUtils.config(getAssets().open("mmexport1507031142145.svg"), SvgConfig.GLYPHS_RANDOM);
         } catch (IOException e) {
             e.printStackTrace();
         }
