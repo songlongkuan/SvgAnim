@@ -28,6 +28,7 @@
         app:animatedSvgTraceTimePerGlyph="1000" />
 
 > 初始化配置
+
 	 //路径为svg图片的路径
 	 SvgEntity config = SvgUtils.config(getAssets().open("mmexport1507031142145.svg"), SvgConfig.GLYPHS_RANDOM);
 	 //初始化 方法
