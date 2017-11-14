@@ -45,6 +45,11 @@
         animatedSvgView.rebuildGlyphData();
         animatedSvgView.start();
 
-> 效果预览
+# Thanks #
+>[AnimatedSvgView](https://github.com/jaredrummler/AnimatedSvgView "AnimatedSvgView")
+
+
+
+效果预览
 
 ![](https://i.imgur.com/ko9ErrK.gif)
