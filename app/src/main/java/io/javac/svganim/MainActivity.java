@@ -14,7 +14,6 @@ import io.javac.svglibary.utils.SvgUtils;
 public class MainActivity extends AppCompatActivity {
     private AnimatedSvgView animatedSvgView;
     private SvgEntity config;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
