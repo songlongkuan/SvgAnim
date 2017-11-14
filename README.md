@@ -38,7 +38,7 @@
 > 启动动画
 
 
-
+	'
 		animatedSvgView.setGlyphStrings(config.getGlyphs());
         animatedSvgView.setFillColors(config.getColors());
         animatedSvgView.setViewportSize(config.getWidth(), config.getWidth());
@@ -46,6 +46,7 @@
         animatedSvgView.setTraceColors(config.getColors());
         animatedSvgView.rebuildGlyphData();
         animatedSvgView.start();
+	'
 
 # Thanks #
 >[AnimatedSvgView](https://github.com/jaredrummler/AnimatedSvgView "AnimatedSvgView")
