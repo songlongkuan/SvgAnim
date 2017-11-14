@@ -37,7 +37,7 @@
 
 > 启动动画
 
-	 animatedSvgView.setGlyphStrings(config.getGlyphs());
+		animatedSvgView.setGlyphStrings(config.getGlyphs());
         animatedSvgView.setFillColors(config.getColors());
         animatedSvgView.setViewportSize(config.getWidth(), config.getWidth());
         animatedSvgView.setTraceResidueColor(0x32000000);
